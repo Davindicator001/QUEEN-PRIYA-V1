@@ -157,7 +157,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +2349159895444 : `)))
+         phoneNumber = "+23451217349"
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
