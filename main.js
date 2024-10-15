@@ -30,7 +30,20 @@ const Pino = require("pino")
 const readline = require("readline")
 const { parsePhoneNumber } = require("libphonenumber-js")
 const makeWASocket = require("@whiskeysockets/baileys").default
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000; // Use the provided PORT by Render, or fallback to 3000.
 
+// Your WhatsApp bot logic here...
+
+// Start the Express server (to keep Render happy).
+app.get('/', (req, res) => {
+  res.send('WhatsApp bot is running!');
+});
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
 const store = makeInMemoryStore({
     logger: pino().child({
         level: 'silent',
