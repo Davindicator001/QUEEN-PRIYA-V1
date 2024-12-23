@@ -152,8 +152,6 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
       if (!!phoneNumber) {
          phoneNumber = "+2349051217349"
          }
-      } else {
-         phoneNumber = "+2349051217349"
       }
 
       setTimeout(async () => {
