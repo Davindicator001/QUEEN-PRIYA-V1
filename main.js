@@ -161,7 +161,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
          code = code?.match(/.{1,4}/g)?.join("-") || code
          console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
       }, 3000)
-   }
+   
    
    XeonBotInc.ev.on('connection.update', async (update) => {
 	const {
