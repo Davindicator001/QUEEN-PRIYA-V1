@@ -83,7 +83,7 @@ nocache('../QueenPriyaV1.js', module => console.log(color('[ CHANGE ]', 'green')
 require('./main.js')
 nocache('../main.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
-let phoneNumber = "2349159895444"
+let phoneNumber = "2349051217349"
 let owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
@@ -150,24 +150,10 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 
       let phoneNumber
       if (!!phoneNumber) {
-         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-
-         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +2349159895444")))
-            process.exit(0)
+         phoneNumber = "+2349051217349"
          }
       } else {
          phoneNumber = "+2349051217349"
-         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-
-         // Ask again when entering the wrong number
-         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +2349159895444")))
-
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +2349159895444 : `)))
-            phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-            rl.close()
-         }
       }
 
       setTimeout(async () => {
