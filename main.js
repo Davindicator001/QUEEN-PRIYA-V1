@@ -83,7 +83,7 @@ nocache('../QueenPriyaV1.js', module => console.log(color('[ CHANGE ]', 'green')
 require('./main.js')
 nocache('../main.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
-let phoneNumber = "2349051217349"
+let phoneNumber = "+2349051217349"
 let owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
